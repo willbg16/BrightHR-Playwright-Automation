@@ -77,6 +77,9 @@ test('Add two employees and verify they are displayed and then deleted', async (
   // Disable the Send Registration Email toggle.
   await page.getByTestId('checkboxLabel').click();
 
+  // Check if check box Email toggle is unchecked.
+  await expect(page.getByTestId('checkboxLabel')).not.toBeChecked();
+
    // Verify the Phone number field is visible.
   await expect(page.getByText('Phone number')).toBeVisible();
 
