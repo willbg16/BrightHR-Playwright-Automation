@@ -81,19 +81,19 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await expect(page.getByText('Phone number')).toBeVisible();
 
   // Enter the employee's phone number.
-  await page.getByRole('textbox', { name: 'Phone number (optional)' }).fill('07472341029');
+  await page.getByRole('textbox', { name: 'Phone number (optional)' }).fill(employee1.phone);
 
   // Verify the Start Date field is visible.
   await expect(page.getByText('Start date')).toBeVisible();
 
   // Enter the employee's start date.
-  await page.getByRole('textbox', { name: 'Start date (optional)' }).fill('08/08/1995');
+  await page.getByRole('textbox', { name: 'Start date (optional)' }).fill(employee1.startDate);
 
   // Verify the Job Title field is visible.
   await expect(page.getByText('Job title')).toBeVisible();
 
   // Enter the employee's job title.
-  await page.getByRole('textbox', { name: 'Job title (optional)' }).fill('qa automation');
+  await page.getByRole('textbox', { name: 'Job title (optional)' }).fill(employee1.jobTitle);
 
   // Verify the Save button is visible.
   await expect(page.getByRole('button', { name: 'Save new employee' })).toBeVisible();
@@ -135,7 +135,7 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await expect(page.getByText('Phone number')).toBeVisible();
 
   // Enter the second employee's phone number.
-  await page.getByRole('textbox', { name: 'Phone number (optional)' }).fill('07472341029');
+  await page.getByRole('textbox', { name: 'Phone number (optional)' }).fill(employee2.phone);
 
   // Verify the Start Date field is visible.
   await expect(page.getByText('Start date')).toBeVisible();
@@ -144,13 +144,13 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await page.getByRole('textbox', { name: 'Start date (optional)' }).click();
 
   // Enter the second employee's start date.
-  await page.getByRole('textbox', { name: 'Start date (optional)' }).fill('09/08/1995');
+  await page.getByRole('textbox', { name: 'Start date (optional)' }).fill(employee2.startDate);
 
   // Verify the Job Title field is visible.
   await expect(page.getByText('Job title')).toBeVisible();
 
   // Enter the second employee's job title.
-  await page.getByRole('textbox', { name: 'Job title (optional)' }).fill('qa automation 2');
+  await page.getByRole('textbox', { name: 'Job title (optional)' }).fill(employee2.jobTitle);
 
   // Verify the Save button is visible.
   await expect(page.getByRole('button', { name: 'Save new employee' })).toBeVisible();
