@@ -69,7 +69,7 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await expect(page.getByText('Email address')).toBeVisible();
 
   // Enter the employee's email address.
-  await page.getByRole('textbox', { name: 'Email address' }).fill('willbg16@hotmail.co.uk');
+  await page.getByRole('textbox', { name: 'Email address' }).fill(employee1.email);
 
   // Verify the registration email option is displayed.
   await expect(page.getByText('Send registration email')).toBeVisible();
@@ -126,7 +126,7 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await expect(page.getByText('Email address')).toBeVisible();
 
   // Enter the second employee's email.
-  await page.getByRole('textbox', { name: 'Email address' }).fill('willbg17@gmail.com');
+  await page.getByRole('textbox', { name: 'Email address' }).fill(employee2.email);
 
   // Disable the registration email.
   await page.getByTestId('checkboxLabel').click();
