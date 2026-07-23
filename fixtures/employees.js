@@ -7,6 +7,7 @@ export const employee1 = {
 export const employee2 = {
   firstName: 'Bill',
   lastName: 'beresford-grindrod',
+  email: 'willbg17@gmail.com'
 };
 
 
