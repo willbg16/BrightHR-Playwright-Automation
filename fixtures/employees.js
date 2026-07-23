@@ -15,3 +15,12 @@ export const employee2 = {
   startDate: '09/08/1995',
   jobTitle: 'QA Automation 2',
 };
+
+export const employee3 = {
+  firstName: 'Test',
+  lastName: 'Invalid email',
+  email: '!@£$%^&*()',
+  phone: '07472341029',
+  startDate: '09/08/1995',
+  jobTitle: 'QA Automation 2',
+};
