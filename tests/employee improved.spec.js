@@ -1,5 +1,6 @@
 // Import Playwright's test runner and assertion library.
 import { test, expect } from '@playwright/test';
+import { employee1, employee2 } from '../fixtures/employees';
 
 // Define a Playwright test called "test".
 test('Add two employees and verify they are displayed and then deleted', async ({ page }) => {
@@ -17,13 +18,13 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await expect(page.getByText('Email address')).toBeVisible();
 
   // Enter the email address.
-  await page.getByRole('textbox', { name: 'Email address' }).fill('qaAutomationTechTask@grr.la');
+  await page.getByLabel('Email').fill(process.env.USERNAME);
 
   // Verify the Password label is visible.
   await expect(page.getByText('Password', { exact: true })).toBeVisible();
 
   // Enter the password.
-  await page.getByRole('textbox', { name: 'Password visibility' }).fill('A1234567890-');
+  await page.getByLabel('Password').fill(process.env.PASSWORD);
 
   // Verify the login form has fully loaded.
   await expect(page.getByText('I\'m using a public or shared')).toBeVisible();
@@ -56,13 +57,13 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await expect(page.getByText('First name')).toBeVisible();
 
   // Enter the first employee's first name.
-  await page.getByRole('textbox', { name: 'First name' }).fill('william');
+  await page.getByRole('textbox', { name: 'First name' }).fill(employee1.firstName);
 
   // Verify the Last Name field is visible.
   await expect(page.getByText('Last name')).toBeVisible();
 
   // Click & Enter the last name.
-  await page.getByRole('textbox', { name: 'Last name' }).fill('Beresford-grindrod');
+  await page.getByRole('textbox', { name: 'Last name' }).fill(employee1.lastName);
 
   // Verify the Email Address field is visible.
   await expect(page.getByText('Email address')).toBeVisible();
@@ -113,13 +114,13 @@ test('Add two employees and verify they are displayed and then deleted', async (
   await expect(page.getByText('First name')).toBeVisible();
 
   // Enter the second employee's first name.
-  await page.getByRole('textbox', { name: 'First name' }).fill('bill');
+  await page.getByRole('textbox', { name: 'First name' }).fill(employee2.firstName);
 
   // Verify the Last Name field is visible.
   await expect(page.getByText('Last name')).toBeVisible();
 
   // Click &Enter the second employee's last name.
-  await page.getByRole('textbox', { name: 'Last name' }).fill('beresford-grindrod');
+  await page.getByRole('textbox', { name: 'Last name' }).fill(employee2.lastName);
 
   // Verify the Email field is visible.
   await expect(page.getByText('Email address')).toBeVisible();
